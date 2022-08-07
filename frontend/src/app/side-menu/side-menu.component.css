@@ -18,17 +18,12 @@
     padding: 3.5rem 0.4rem;
 }
 
-.logo a.logo-text {
+.logo a.logo-text svg {
     display: block;
-    color: #565D74;
-    font-size: 20px;
-    overflow: hidden;
+    font-size: 40px;
     padding: 0.4rem 0;
-    line-height: 29px;
     font-weight: 700;
-    white-space: nowrap;
     opacity: 1;
-    text-decoration: none;
     text-align: center;
     transform: translate3d(0px, 0, 0);
     -webkit-transform: translate3d(0px, 0, 0);
