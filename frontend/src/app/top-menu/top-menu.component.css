@@ -1,0 +1,111 @@
+nav {
+    padding: 12px 15px;
+    background: #FBFBFF !important;
+    width: 100%;
+    margin-left: 0;
+    border-bottom: 1px solid #ECECEC;
+}
+
+nav .sidenav-button {
+    font-size: 25px;
+    color: #333333;
+    margin-right: 35px;
+}
+
+nav .navbar-brand {
+    font-size: 20px;
+    color: #333333;
+}
+
+nav .logged-user {
+    color: #828282;
+}
+
+a.sidenav-button {
+    color: rgba(255, 255, 255, .5);
+    transition: all .3s ease 0s;
+    display: inline;
+    margin-right: 10px;
+}
+
+a.sidenav-button:hover {
+    color: rgba(255, 255, 255, .8);
+    transition: all .3s ease 0s;
+}
+
+.icons {
+    padding: 0.9rem 1rem;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: #333333 !important;
+}
+
+.navbar .avatar {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.navbar .avatar img {
+    width: 30px;
+    height: 30px;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    height: 35px;
+    text-indent: 25px;
+    border: 1px solid #ECECEC;
+    width: 350px;
+    border-radius: 10px;
+    background-color: inherit;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid #FBB30B;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    color: #565D74;
+}
+
+@media only screen and (max-width: 600px) {
+    nav .navbar-brand {
+        font-size: 12px;
+    }
+    nav .sidenav-button {
+        margin-right: 8px;
+    }
+    .icons {
+        padding: 0.9rem 0.5rem;
+        font-size: 12px;
+    }
+    .search input {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    nav .navbar-brand {
+        font-size: 9px;
+    }
+    nav .sidenav-button {
+        margin-right: 3px;
+    }
+    .icons {
+        padding: 0.9rem 0.1rem;
+        font-size: 9px;
+    }
+}

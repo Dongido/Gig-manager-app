@@ -1,1 +1,30 @@
-<p>top-menu works!</p>
+<nav class="navbar navbar-expand navbar-dark">
+    <div class="container-fluid">
+        <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()"></i></a>
+
+        <div class="search">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+
+        <div class="collapse navbar-collapse" id="TopMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item icons"><i class="fa fa-bell-o" aria-hidden="true"></i></li>
+                <li class="nav-item icons"><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+                <li class="nav-item icons"><i class="fa fa-cog" aria-hidden="true"></i></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="TopMenunavbar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="avatar">
+                            <img src="assets/img/avatar.png" alt="User image">
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="TopMenunavbar">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Account</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

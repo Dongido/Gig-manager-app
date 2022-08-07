@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css';
 html,
 body {
     height: 100%;
@@ -7,5 +8,53 @@ body {
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: 400;
+    font-size: 0.88rems;
+}
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.menu-content {
+    min-height: 720px;
+    height: auto;
+    width: 100%;
+    background-color: #FBFBFF !important;
+    color: #333;
+    padding: 35px 0;
+}
+
+.menu-content .menu-content-tilte {
+    border-bottom: 1px solid #ECECEC;
+    padding: 0 60px;
+}
+
+.menu-content .menu-content-tilte h2 {
+    font-size: 35px;
+    text-transform: capitalize;
+    color: #2C263D;
+}
+
+.mat-drawer-container,
+.mat-drawer {
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    font-size: 14px;
+    color: #565D74;
 }

@@ -4,6 +4,7 @@
     display: block;
     background: #fff;
     transition: .5s cubic-bezier(.0685, .0473, .346, 1);
+    border-right: 1px solid #ECECEC;
 }
 
 .sidenav-content {
@@ -68,6 +69,7 @@
     width: 20px;
     margin-right: 10px;
     font-size: 1.1rem;
+    color: #565D74;
 }
 
 .nav-menu li>a:hover,

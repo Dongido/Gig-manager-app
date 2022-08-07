@@ -4,6 +4,7 @@
             <app-side-menu></app-side-menu>
         </mat-sidenav>
         <mat-sidenav-content>
+            <app-top-menu [inputSideNav]="sideNav"></app-top-menu>
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
