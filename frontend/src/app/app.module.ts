@@ -8,6 +8,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,92 @@
+.sidenav {
+    height: 100%;
+    width: 210px;
+    display: block;
+    background: #fff;
+    transition: .5s cubic-bezier(.0685, .0473, .346, 1);
+}
+
+.sidenav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    position: relative;
+    padding: 3.5rem 0.4rem;
+}
+
+.logo a.logo-text {
+    display: block;
+    color: #565D74;
+    font-size: 20px;
+    overflow: hidden;
+    padding: 0.4rem 0;
+    line-height: 29px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 1;
+    text-decoration: none;
+    text-align: center;
+    transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+    -o-transform: translate3d(0px, 0, 0);
+}
+
+.logo::after {
+    position: absolute;
+    content: '';
+    right: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    bottom: 0;
+}
+
+.nav-menu {
+    list-style: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+.nav-menu li>a {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: #565D74;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-menu li>a i {
+    width: 20px;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.nav-menu li>a:hover,
+.nav-menu li>a:hover i {
+    opacity: .6;
+    transition: all .3s ease 0s;
+}
+
+.nav-menu li.active>a {
+    background: parent;
+    color: #FBB30B;
+}
+
+.nav-menu li.active>a:before {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    left: -2px;
+    top: 17px;
+    border-radius: 50%;
+    background: #ffffff;
+}
