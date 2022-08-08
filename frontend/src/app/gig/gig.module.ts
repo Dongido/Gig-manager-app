@@ -5,6 +5,9 @@ import { GigRoutingModule } from './gig-routing.module';
 import { GigsViewComponent } from './gigs-view/gigs-view.component';
 import { GigsCreateStepOneComponent } from './gigs-create-step-one/gigs-create-step-one.component';
 import { GigsCreateStepTwoComponent } from './gigs-create-step-two/gigs-create-step-two.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { GigsCreateStepTwoComponent } from './gigs-create-step-two/gigs-create-s
   ],
   imports: [
     CommonModule,
-    GigRoutingModule
+    GigRoutingModule,
+    MatTabsModule,
+    MatIconModule,
+    MatTableModule
   ]
 })
 export class GigModule { }

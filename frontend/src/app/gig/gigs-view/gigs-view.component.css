@@ -1,0 +1,67 @@
+.mat-icon {
+    margin-left: 8px;
+}
+
+.menu-content .menu-content-header {
+    border-bottom: none;
+}
+
+.gig-filter {
+    padding: 40px 35px;
+    overflow: hidden;
+}
+
+.gig-filter .gig-filter-item button {
+    border: 1px solid #ECECEC;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.gig-filter .gig-filter-item button:focus {
+    border: 1px solid #FBB30B !important;
+    box-shadow: 0 0 0 .25rem rgba(251, 179, 11, .25) !important;
+}
+
+.tab-count {
+    background-color: #fcedcb;
+    color: #FBB30B;
+    padding: 3px 12px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+
+.mat-tab-label:focus {
+    font-weight: 600;
+}
+
+.mat-table {
+    background: #FBFBFF;
+}
+
+.mat-row .mat-cell:first-child {
+    border-top-left-radius: 10px;
+}
+
+.mat-row .mat-cell:last-child {
+    border-top-right-radius: 10px;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 10px solid #FBFBFF;
+    border-top: 5px solid #FBFBFF;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+}
+
+.mat-header-cell {
+    background-color: #FBFBFF;
+    color: #333;
+}
+
+.gig-row-is-clicked {
+    font-weight: bold;
+}

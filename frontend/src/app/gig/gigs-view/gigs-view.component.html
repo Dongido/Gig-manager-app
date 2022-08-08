@@ -1,8 +1,114 @@
 <section class="menu-content">
-    <div class="menu-content-tilte">
-        <h2>Gigs </h2>
-    </div>
-    <div class="container">
+    <div class="menu-content-header">
+        <div class="menu-content-title">
+            <h2>Gigs </h2>
+        </div>
+        <div class="container menu-content-body">
+            <mat-tab-group class="gig-view-tab" mat-align-tabs="center">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        All gigs
+                        <span class="tab-count">3400</span>
+                    </ng-template>
+                    <div class="row gig-filter">
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <button class="btn btn-sm btn-default">Freelance</button>
+                            </div>
+                        </div>
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Kyewords
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Location
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <button class="btn btn-sm btn-default">REmote friendly</button>
+                            </div>
+                        </div>
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <button class="btn btn-sm btn-default">Design</button>
+                            </div>
+                        </div>
+                        <div class="col-x-6 col-md-2">
+                            <div class="gig-filter-item">
+                                <button class="btn btn-sm btn-default">Contract</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 content-space">
+                                <ng-container matColumnDef="position">
+                                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                                    <td mat-cell *matCellDef="let element">{{element.position}}</td>
+                                </ng-container>
 
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="weight">
+                                    <th mat-header-cell *matHeaderCellDef>Weight</th>
+                                    <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="symbol">
+                                    <th mat-header-cell *matHeaderCellDef>Symbol</th>
+                                    <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row (click)="clickedRows.add(row)" [class.gig-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+                        </div>
+                    </div>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        My gigs
+                        <span class="tab-count">1200</span>
+                    </ng-template>
+                    Content 2
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Rejected gigs
+                        <span class="tab-count">100</span>
+                    </ng-template>
+
+                    Content 3
+                </mat-tab>
+            </mat-tab-group>
+        </div>
     </div>
+
+
 </section>

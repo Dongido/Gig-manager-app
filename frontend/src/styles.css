@@ -30,12 +30,15 @@ body {
     padding: 35px 0;
 }
 
-.menu-content .menu-content-tilte {
-    border-bottom: 1px solid #ECECEC;
+.menu-content .menu-content-header {
+    margin: 0;
+}
+
+.menu-content .menu-content-title {
     padding: 0 60px;
 }
 
-.menu-content .menu-content-tilte h2 {
+.menu-content .menu-content-title h2 {
     font-size: 35px;
     text-transform: capitalize;
     color: #2C263D;
@@ -57,4 +60,32 @@ ul {
 i {
     font-size: 14px;
     color: #565D74;
+}
+
+.mat-tab-label,
+.mat-tab-link {
+    color: #333 !important;
+}
+
+[mat-align-tabs=center]>.mat-tab-header .mat-tab-labels {
+    justify-content: space-around !important;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #FBB30B;
+}
+
+.border-b {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.mat-elevation-z8 {
+    box-shadow: none;
+}
+
+.content-space {
+    width: 95%;
+    margin: auto;
 }
