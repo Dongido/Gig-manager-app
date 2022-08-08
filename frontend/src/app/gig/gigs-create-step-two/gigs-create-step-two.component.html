@@ -5,7 +5,54 @@
         </div>
     </div>
 
-    <div class="container">
-
+    <div class="container menu-content-body gig-form mt-5 content-space">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="gig-form-item sidemenu-title">
+                    <h4>New gig</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="gig-form-item">
+                    <ul class="col sidemenu">
+                        <li><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                            <a routerLink="/gig/add-basic-data">Basic data</a></li>
+                        <li class="active"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                            <a routerLink="/gig/add-renumeration">Renumeration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="gig-form-item">
+                    <div class="col form">
+                        <form>
+                            <div class="row">
+                                <p class="custom-label">Salary</p>
+                                <div class="col-sm-6 mb-2">
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Minimum</mat-label>
+                                        <input matInput type="number">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6 mb-2">
+                                    <mat-form-field class="full-width" appearance="outline">
+                                        <mat-label>Maximum</mat-label>
+                                        <input matInput type="number">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 form-buttons">
+                                    <div class="text-end">
+                                        <button mat-button>Back</button>
+                                        <button mat-raised-button color="primary" class="pri">Add gig</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

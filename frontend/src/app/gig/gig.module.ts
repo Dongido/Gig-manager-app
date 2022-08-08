@@ -8,6 +8,10 @@ import { GigsCreateStepTwoComponent } from './gigs-create-step-two/gigs-create-s
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import {MatTableModule} from '@angular/material/table';
     GigRoutingModule,
     MatTabsModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    MatChipsModule,
+    MatButtonModule,
+    MatSelectModule
   ]
 })
 export class GigModule { }

@@ -65,3 +65,13 @@
 .gig-row-is-clicked {
     font-weight: bold;
 }
+
+.pri {
+    background-color: #2F417E;
+}
+
+.pri i {
+    margin-left: 12px;
+    color: #fff;
+    font-size: 12px;
+}

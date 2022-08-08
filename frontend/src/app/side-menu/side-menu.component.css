@@ -63,7 +63,7 @@
 .nav-menu li>a i {
     width: 20px;
     margin-right: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #565D74;
 }
 
@@ -73,8 +73,17 @@
     transition: all .3s ease 0s;
 }
 
-.nav-menu li.active>a {
+.nav-menu li a:active {
     background: parent;
+    color: #FBB30B;
+}
+
+.nav-menu li a:focus {
+    background: parent;
+    color: #FBB30B;
+}
+
+.nav-menu li a:focus i {
     color: #FBB30B;
 }
 

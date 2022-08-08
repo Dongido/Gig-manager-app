@@ -89,3 +89,80 @@ i {
     width: 95%;
     margin: auto;
 }
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ECECEC;
+}
+
+.mat-form-field .mat-hint,
+.mat-form-field::placeholder,
+.mat-form-field .mat-form-field-label {
+    color: #ECECEC;
+}
+
+.mat-select-arrow,
+.mat-form-field input {
+    color: #565D74;
+}
+
+
+/*--- Gig form ---*/
+
+.gig-form .gig-form-item .col {
+    padding: 30px;
+    background-color: #fff;
+    color: #565D74;
+    border-radius: 15px;
+}
+
+.gig-form .gig-form-item .col.form {
+    min-width: 150px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.gig-form-item .col.sidemenu li {
+    line-height: 40px;
+}
+
+.gig-form-item .col.sidemenu li a {
+    color: #565D74;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.gig-form-item .col.sidemenu i {
+    color: #565D74;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.gig-form-item .col.sidemenu li a:active {
+    color: #FBB30B;
+}
+
+.gig-form-item .col.sidemenu li.active a {
+    color: #FBB30B;
+}
+
+.gig-form-item .col.sidemenu li.active i {
+    color: #FBB30B;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.sidemenu-title h4 {
+    font-size: 16px;
+    color: #565D74;
+    font-weight: 500;
+}
+
+.custom-label {
+    color: #565D74;
+    font-size: 16px;
+    font-weight: 500;
+}
