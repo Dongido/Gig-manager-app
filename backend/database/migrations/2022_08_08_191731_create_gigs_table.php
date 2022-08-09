@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('state');
             $table->text('address');
-            $table->json('tags')->nullable();
+            $table->text('tags')->nullable();
             $table->decimal('minimum_salary')->nullable();
             $table->decimal('maximum_salary')->nullable();
             $table->timestamps();
