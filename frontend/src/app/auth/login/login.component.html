@@ -1,19 +1,23 @@
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-6 offset-md-3 mt-4">
-            <form>
+            <h3>User Login</h3>
+            <form (ngSubmit)="onSubmit(SignInForm)" #SignInForm="ngForm">
                 <div class="mb-3">
-                    <label for="EmailInput" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required ngModel>
                 </div>
                 <div class="mb-3">
-                    <label for="PasswordInput" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="PasswordInput">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required ngModel>
                 </div>
                 <div class="mb-3 form-check">
                     <div class="form-text">Not registered yet? <a routerLink="/register"> Register</a>.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                    <p class="form-text error-message">{{invalidUser}}</p>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
     </div>

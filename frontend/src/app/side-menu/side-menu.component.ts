@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import {} from 'rxjs/observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn$!: Observable<boolean>;
+  loggedinUser: string | null = '';
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isLoggedIn$ = this.authService.isloggedIn
   }
 
 }
