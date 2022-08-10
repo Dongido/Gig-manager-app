@@ -62,6 +62,19 @@
     color: #333;
 }
 
+.mat-paginator {
+    background: #FBFBFF;
+}
+
+.mat-paginator,
+.mat-paginator-page-size .mat-select-trigger {
+    color: #424242;
+}
+
+.mat-select-value {
+    color: #424242;
+}
+
 .gig-row-is-clicked {
     font-weight: bold;
 }

@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-x-6 col-md-2">
                             <div class="gig-filter-item">
-                                <button class="btn btn-sm btn-default">REmote friendly</button>
+                                <button class="btn btn-sm btn-default">Remote friendly</button>
                             </div>
                         </div>
                         <div class="col-x-6 col-md-2">
@@ -65,30 +65,39 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 content-space">
-                                <ng-container matColumnDef="position">
-                                    <th mat-header-cell *matHeaderCellDef>No.</th>
-                                    <td mat-cell *matCellDef="let element">{{element.position}}</td>
+                            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 content-space">
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef>Id</th>
+                                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
                                 </ng-container>
 
-                                <ng-container matColumnDef="name">
-                                    <th mat-header-cell *matHeaderCellDef>Name</th>
-                                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                                <ng-container matColumnDef="role_id">
+                                    <th mat-header-cell *matHeaderCellDef>Role</th>
+                                    <td mat-cell *matCellDef="let element">{{element.role_id}}</td>
                                 </ng-container>
 
-                                <ng-container matColumnDef="weight">
-                                    <th mat-header-cell *matHeaderCellDef>Weight</th>
-                                    <td mat-cell *matCellDef="let element">{{element.weight}}</td>
+                                <ng-container matColumnDef="company_id">
+                                    <th mat-header-cell *matHeaderCellDef>Company</th>
+                                    <td mat-cell *matCellDef="let element">{{element.company_id}}</td>
                                 </ng-container>
 
-                                <ng-container matColumnDef="symbol">
-                                    <th mat-header-cell *matHeaderCellDef>Symbol</th>
-                                    <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+                                <ng-container matColumnDef="updated_at">
+                                    <th mat-header-cell mat-sort-header *matHeaderCellDef mat-sort-header>Date</th>
+                                    <td mat-cell *matCellDef="let element">{{element.updated_at}}</td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="maximum_salary">
+                                    <th mat-header-cell mat-sort-header *matHeaderCellDef>Salary</th>
+                                    <td mat-cell *matCellDef="let element">{{element.maximum_salary}}</td>
                                 </ng-container>
 
                                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                                <tr mat-row (click)="clickedRows.add(row)" [class.gig-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                             </table>
+
+                            <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[1, 2, 5, 10, 25, 100]">
+                            </mat-paginator>
+
                         </div>
                     </div>
                 </mat-tab>

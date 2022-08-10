@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogin, UserRegister } from '../model/signInData';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,12 @@ export class AuthService {
   baseUrl: string = "http://testapi.orientexpress.com.ng"
 
   constructor(private router: Router, private http: HttpClient) { }
+
+  getToken() {
+    let token = localStorage.getItem('token');
+    token = 'Bearer ' + token;
+    return token;
+  }
 
   authUser(data: UserLogin) {
     return this.http.post(this.baseUrl + '/api/login', data)
@@ -48,4 +54,16 @@ export class AuthService {
   get isloggedIn(){
     return this.loggedIn.asObservable()
   }
+
+  // --- Gigs endpoint
+
+  getGigs(){
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers = headers.append('Authorization', this.getToken());
+
+    return this.http.get(this.baseUrl + '/api/gigs', { headers: headers })
+  }
+
+
 }
