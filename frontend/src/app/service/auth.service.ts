@@ -21,7 +21,7 @@ export class AuthService {
 
 
   addUser(user: UserRegister){
-    return this.http.post(this.baseUrl + "api/register", user)
+    return this.http.post(this.baseUrl + "/api/register", user)
   }
 
   login(data: UserLogin){

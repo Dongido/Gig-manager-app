@@ -18,11 +18,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(siginInForm: NgForm){
     if(siginInForm.valid){
-      console.log("valid dd")
       this.authServices.login(siginInForm.value)
     }
     else {
-      console.log("invalid dd")
       this.invalidUser = this.authServices.invalidUser
     }
   }

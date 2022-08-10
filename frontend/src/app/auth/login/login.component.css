@@ -1,3 +1,13 @@
+.user-form form {
+    border: 1px solid #889393;
+    padding: 30px;
+}
+
+.user-form label {
+    color: #333;
+    font-size: 18px;
+}
+
 .error-message {
     color: #f00;
     font-size: 14px;

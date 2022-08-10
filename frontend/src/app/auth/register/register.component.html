@@ -1,22 +1,29 @@
-<div class="container">
+<div class="container user-form">
     <div class="row mt-5">
         <div class="col-md-6 offset-md-3 mt-4">
             <h3>Register new user</h3>
-            <form>
+            <form (ngSubmit)="onSubmit(RegisterForm)" #RegisterForm="ngForm">
                 <div class="mb-3">
-                    <label for="NameInput" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="NameInput">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" name="name" id="name" required ngModel>
                 </div>
                 <div class="mb-3">
-                    <label for="EmailInput" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="EmailInput">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="email" required ngModel>
                 </div>
                 <div class="mb-3">
-                    <label for="PasswordInput" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="PasswordInput">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" required ngModel>
+                </div>
+                <div class="mb-3">
+                    <label for="c_password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="c_password" id="c_password" required ngModel>
                 </div>
                 <div class="mb-3 form-check">
-                    <div class="form-text">Alredy registered? <a routerLink="/"> login</a>.</div>
+                    <div class="form-text">Alredy registered? <a routerLink="/login"> login</a>.</div>
+                </div>
+                <div class="mb-3">
+                    <p class="form-text error-message">{{message}}</p>
                 </div>
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
