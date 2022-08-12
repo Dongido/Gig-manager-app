@@ -14,7 +14,7 @@ import { DeleteAlertComponent } from '../../delete-alert/delete-alert.component'
 })
 export class GigsViewComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'role_id', 'company_id', 'updated_at', 'maximum_salary', 'action'];
+  displayedColumns: string[] = ['id', 'role_name', 'company_name', 'updated_at', 'maximum_salary', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild('paginator') paginator! : MatPaginator
