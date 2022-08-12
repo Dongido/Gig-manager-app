@@ -9,8 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class AuthService {
+  token: boolean = !!localStorage.getItem('token')
   public invalidUser: string = ''
-  private loggedIn = new BehaviorSubject<boolean>(false)
+  private loggedIn = new BehaviorSubject<boolean>(this.token)
   baseUrl: string = "http://testapi.orientexpress.com.ng"
 
   constructor(private router: Router, private http: HttpClient) { }
@@ -33,7 +34,6 @@ export class AuthService {
   login(data: UserLogin){
     this.authUser(data).subscribe(
       (res: any) => {
-        console.log("Response: ", res)
         const user = res.data
         localStorage.setItem('token', user.token)
         localStorage.setItem('userName', user.name)
@@ -48,22 +48,12 @@ export class AuthService {
 
   logout(){
     this.loggedIn.next(false);
+    localStorage.removeItem('token')
     this.router.navigate(['/login']);
   }
 
   get isloggedIn(){
     return this.loggedIn.asObservable()
   }
-
-  // --- Gigs endpoint
-
-  getGigs(){
-    let headers = new HttpHeaders();
-    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    headers = headers.append('Authorization', this.getToken());
-
-    return this.http.get(this.baseUrl + '/api/gigs', { headers: headers })
-  }
-
 
 }

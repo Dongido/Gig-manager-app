@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { GigRoutingModule } from './gig-routing.module';
 import { GigsViewComponent } from './gigs-view/gigs-view.component';
@@ -14,16 +15,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { GigsCreateFormComponent } from './gigs-create-form/gigs-create-form.component';
 
 
 @NgModule({
   declarations: [
     GigsViewComponent,
     GigsCreateStepOneComponent,
-    GigsCreateStepTwoComponent
+    GigsCreateStepTwoComponent,
+    GigsCreateFormComponent
   ],
   imports: [
     CommonModule,
+    FormsModule, 
+    ReactiveFormsModule,
     GigRoutingModule,
     MatTabsModule,
     MatIconModule,

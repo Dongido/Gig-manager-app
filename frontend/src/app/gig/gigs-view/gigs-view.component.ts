@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { AuthService } from '../../service/auth.service';
+import { GigsService } from '../../service/gigs.service'
 
 @Component({
   selector: 'app-gigs-view',
@@ -18,10 +18,10 @@ export class GigsViewComponent implements OnInit {
   @ViewChild('paginator') paginator! : MatPaginator
   @ViewChild(MatSort) matSort! : MatSort
 
-  constructor(private authService: AuthService) { }
+  constructor(private gigsService: GigsService) { }
 
   ngOnInit(): void {
-    this.authService.getGigs().subscribe((res: any) => {
+    this.gigsService.getGigs().subscribe((res: any) => {
       this.dataSource = new MatTableDataSource(res.data)
       this.dataSource.paginator = this.paginator
       this.dataSource.sort = this.matSort

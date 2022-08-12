@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(RegisterForm: NgForm){
+console.log("data ", RegisterForm.value)
     if(RegisterForm.valid){
       this.authServices.addUser(RegisterForm.value).subscribe(() =>{
         this.message = 'User registered successfully'

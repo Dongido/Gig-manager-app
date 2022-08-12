@@ -1,0 +1,148 @@
+<section class="menu-content">
+    <div class="menu-content-header border-b">
+        <div class="menu-content-title">
+            <h2>Gigs </h2>
+        </div>
+    </div>
+
+    <div class="container menu-content-body gig-form mt-5 content-space">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="gig-form-item sidemenu-title">
+                    <h4>New gig</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="gig-form-item">
+                    <ul class="col sidemenu">
+                        <li [ngClass]="steps==1 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                            <a routerLink="/gig/add-basic-data">Basic data</a></li>
+                        <li [ngClass]="steps==2 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+                            <a routerLink="/gig/add-renumeration">Renumeration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="gig-form-item">
+                    <div class="col form">
+                        <form (ngSubmit)="onSubmit()" [formGroup]="gigFG">
+                            <div class="Step1" *ngIf="steps==1" formGroupName="basicInfo">
+                                <div class="row">
+                                    <div class="col-sm-6 mb-2">
+                                        <p class="custom-label">Role</p>
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Enter role</mat-label>
+                                            <mat-select formControlName="role_id" required>
+                                                <mat-option *ngFor="let r of role" [value]="r.value">
+                                                    {{r.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <p class="custom-label">Company</p>
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Enter company name</mat-label>
+                                            <mat-select formControlName="company_id" required>
+                                                <mat-option *ngFor="let c of company" [value]="c.value">
+                                                    {{c.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <p class="custom-label">Location</p>
+                                    <div class="col-sm-6 mb-2">
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Country</mat-label>
+                                            <mat-select formControlName="country" required>
+                                                <mat-option *ngFor="let ct of country" [value]="ct.value">
+                                                    {{ct.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>State/Region</mat-label>
+                                            <mat-select formControlName="state" required>
+                                                <mat-option *ngFor="let s of state" [value]="s.value">
+                                                    {{s.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 mb-2">
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Address </mat-label>
+                                            <input matInput placeholder="Placeholder" formControlName="address" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 mb-3">
+                                        <p class="custom-label">Add tags</p>
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Add more tags</mat-label>
+                                            <mat-chip-list #tagList aria-label="Tag selection">
+                                                <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+                                                    {{tag.name}}
+                                                    <button matChipRemove>
+                                                  <mat-icon>cancel</mat-icon>
+                                                </button>
+                                                </mat-chip>
+                                                <input placeholder="New tags..." formControlName="tags" required [matChipInputFor]="tagList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+                                            </mat-chip-list>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-12 suggested-tags mb-3">
+                                        <ul>
+                                            <li>Suggested tags:</li>
+                                            <li><a>full time</a></li>
+                                            <li><a>contract</a></li>
+                                            <li><a>freelance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Step2" *ngIf="steps==2" formGroupName="renumeration">
+                                <div class="row">
+                                    <p class="custom-label">Salary</p>
+                                    <div class="col-sm-6 mb-2">
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Minimum</mat-label>
+                                            <input matInput type="number" formControlName="minimum_salary" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <mat-form-field class="full-width" appearance="outline">
+                                            <mat-label>Maximum</mat-label>
+                                            <input matInput type="number" formControlName="maximum_salary" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-button">
+                                <div class="row">
+                                    <div class="col-sm-12 form-buttons">
+                                        <div class="text-end">
+                                            <a mat-button routerLink="/gig/view" *ngIf="steps==1">Cancel</a>
+                                            <button mat-button (click)="back()" *ngIf="steps==2">Back</button>
+                                            <button mat-raised-button color="primary" class="pri" (click)="continue()" *ngIf="steps==1">Continue</button>
+                                            <button mat-raised-button color="primary" class="pri" *ngIf="steps==2">Add gig</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <pre>{{gigFG.value | json}}</pre>
+</section>
