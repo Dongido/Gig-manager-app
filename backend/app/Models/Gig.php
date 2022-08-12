@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Company;
+use App\Models\Role;
 
 class Gig extends Model
 {
     use HasFactory;
+    protected $table='gigs';
 
     protected $fillable = [
         'company_id',
@@ -20,8 +23,11 @@ class Gig extends Model
         'maximum_salary'
     ];
 
-    public function company()
-    {
-        return $this.belongsTo(Company::class);
+    public function company(){
+        return $this->belongsTo(Company::class);
+    }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
     }
 }

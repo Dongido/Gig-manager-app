@@ -17,7 +17,9 @@ class GigResource extends JsonResource
         return [
             'id' => $this->id,
             'company_id' => $this->company_id,
+            'company_name'=>$this->company->name,
             'role_id' => $this->role_id,
+            'role_name' => $this->role->name,
             'country' => $this->country,
             'state' => $this->state,
             'address' => $this->address,
