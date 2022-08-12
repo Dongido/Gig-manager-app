@@ -91,13 +91,13 @@ i {
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #ECECEC;
+    color: #d4d3d3;
 }
 
 .mat-form-field .mat-hint,
 .mat-form-field::placeholder,
 .mat-form-field .mat-form-field-label {
-    color: #ECECEC;
+    color: #d4d3d3;
 }
 
 .mat-select-arrow,
