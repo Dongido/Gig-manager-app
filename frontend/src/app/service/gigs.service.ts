@@ -8,7 +8,7 @@ import {GigsData} from '../model/gigs'
 })
 export class GigsService {
 
-  baseUrl: string = "http://testapi.orientexpress.com.ng"
+  baseUrl: string = "https://testapi.orientexpress.com.ng"
 
   constructor(private router: Router, private http: HttpClient) { }
 

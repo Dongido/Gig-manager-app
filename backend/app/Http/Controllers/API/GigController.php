@@ -18,7 +18,7 @@ class GigController extends BaseController
      */
     public function index()
     {
-        $gigs = Gig::all();
+        $gigs = Gig::with('company')->all();
     
         return $this->sendResponse(GigResource::collection($gigs), 'Gigs retrieved successfully.');
     }

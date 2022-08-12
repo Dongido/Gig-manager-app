@@ -19,4 +19,9 @@ class Gig extends Model
         'minimum_salary',
         'maximum_salary'
     ];
+
+    public function company()
+    {
+        return $this.belongsTo(Company::class);
+    }
 }

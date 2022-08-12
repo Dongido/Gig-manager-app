@@ -1,10 +1,25 @@
+.user-form {
+    position: fixed;
+    background-image: radial-gradient(farthest-corner at 70px 40px, #c46c1a -10%, #000 15%, #000 85%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 .user-form form {
     border: 1px solid #889393;
     padding: 30px;
 }
 
+.user-form h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 .user-form label {
-    color: #333;
+    color: rgb(136, 132, 132);
     font-size: 18px;
 }
 
