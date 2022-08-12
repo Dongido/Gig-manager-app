@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { GigsCreateFormComponent } from './gigs-create-form/gigs-create-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { GigsCreateFormComponent } from './gigs-create-form/gigs-create-form.com
     MatButtonModule,
     MatSelectModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ]
 })
 export class GigModule { }

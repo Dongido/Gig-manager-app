@@ -27,11 +27,18 @@ export class GigsService {
   }  
 
   addNewGig(data: GigsData){
-    const ndata = JSON.stringify(data)
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
     headers = headers.append('Authorization', this.getToken());
 
     return this.http.post(this.baseUrl + "/api/gigs", data, { headers: headers })
+  }
+
+  removeGig(id: any){
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers = headers.append('Authorization', this.getToken());
+
+    return this.http.delete(this.baseUrl + "/api/gigs/" + id, { headers: headers })
   }
 }

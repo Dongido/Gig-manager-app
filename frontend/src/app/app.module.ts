@@ -18,7 +18,7 @@ import { AuthGuard} from './auth.guard';
     AppComponent,
     DashboardComponent,
     TopMenuComponent,
-    SideMenuComponent
+    SideMenuComponent,
   ],
   imports: [
     BrowserModule,

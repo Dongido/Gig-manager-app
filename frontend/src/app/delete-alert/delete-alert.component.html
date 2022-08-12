@@ -1,0 +1,10 @@
+<div>
+    <h1 mat-dialog-title>Delete Gig</h1>
+    <div mat-dialog-content>
+        Would you like to delete gig?
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="no()">No</button>
+        <button mat-button mat-dialog-close cdkFocusInitial (click)="yes()">Continue</button>
+    </div>
+</div>
