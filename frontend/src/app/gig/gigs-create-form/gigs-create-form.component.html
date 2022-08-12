@@ -15,10 +15,9 @@
             <div class="col-md-3">
                 <div class="gig-form-item">
                     <ul class="col sidemenu">
-                        <li [ngClass]="steps==1 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
-                            <a routerLink="/gig/add-basic-data">Basic data</a></li>
-                        <li [ngClass]="steps==2 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i>
-                            <a routerLink="/gig/add-renumeration">Renumeration</a></li>
+                        <li [ngClass]="steps==1 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i> Basic data</li>
+                        <li [ngClass]="steps==2 ? 'active ' : 'inactive'"><i class="fa fa-stop-circle-o" aria-hidden="true"></i> Renumeration
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -143,6 +142,4 @@
             </div>
         </div>
     </div>
-
-    <pre>{{gigFG.value | json}}</pre>
 </section>

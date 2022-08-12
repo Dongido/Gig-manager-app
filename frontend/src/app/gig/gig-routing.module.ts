@@ -8,8 +8,8 @@ import { GigsCreateFormComponent } from './gigs-create-form/gigs-create-form.com
 const routes: Routes = [
   {path: 'view', component: GigsViewComponent},
   {path: 'add-new-gig', component: GigsCreateFormComponent},
-  {path: 'add-basic-data', component: GigsCreateStepOneComponent},
-  {path: 'add-renumeration', component: GigsCreateStepTwoComponent}
+  /* {path: 'add-basic-data', component: GigsCreateStepOneComponent},
+  {path: 'add-renumeration', component: GigsCreateStepTwoComponent} */
 ];
 
 @NgModule({
