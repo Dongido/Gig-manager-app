@@ -13,6 +13,7 @@ export class AuthService {
   public invalidUser: string = ''
   private loggedIn = new BehaviorSubject<boolean>(this.token)
   baseUrl: string = "https://testapi.orientexpress.com.ng"
+  //baseUrl: string = "http://127.0.0.1:8000" 
 
   constructor(private router: Router, private http: HttpClient) { }
 

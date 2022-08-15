@@ -45,18 +45,14 @@ export class GigsCreateFormComponent implements OnInit {
   steps = 1
 
   gigFG = new FormGroup({
-    basicInfo: new  FormGroup({
-      role_id: new FormControl(''),
-      company_id: new FormControl(''),
-      country: new FormControl(''),
-      state: new FormControl(''),
-      address: new FormControl(''),
-      tags: new FormControl('')
-    }),
-    renumeration: new  FormGroup({
-      minimum_salary: new FormControl(''),
-      maximum_salary: new FormControl('')
-    })
+    role_id: new FormControl(''),
+    company_id: new FormControl(''),
+    country: new FormControl(''),
+    state: new FormControl(''),
+    address: new FormControl(''),
+    tags: new FormControl(''),
+    minimum_salary: new FormControl(''),
+    maximum_salary: new FormControl('')
   })
 
   constructor(public fb: FormBuilder, private gigService: GigsService, private router: Router) { 
@@ -100,11 +96,11 @@ export class GigsCreateFormComponent implements OnInit {
   onSubmit(){
     if(this.steps == 2){
       if(this.gigFG.valid){
-        const stp1 = this.gigFG.value.basicInfo
-        const stp2 = this.gigFG.value.renumeration
-        let userData = { ...stp1, ...stp2 }
-      
-        this.gigService.addNewGig(userData.value).subscribe(() =>{
+        let formdata = this.gigFG.value
+        //console.log("DATA: ", formdata)
+        //console.log("Data Type ", typeof(formdata));
+        
+        this.gigService.addNewGig(formdata).subscribe(() =>{
           console.log('Gig added successfully')
           this.router.navigate(['/gig/view'])
         }, error =>{

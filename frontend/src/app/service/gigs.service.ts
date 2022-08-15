@@ -9,6 +9,7 @@ import {GigsData} from '../model/gigs'
 export class GigsService {
 
   baseUrl: string = "https://testapi.orientexpress.com.ng"
+  //baseUrl: string = "http://127.0.0.1:8000" 
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -18,6 +19,7 @@ export class GigsService {
     return token;
   }
 
+  // Improvement- Gigs will be fetched based on loggedin user id
   getGigs(){
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
