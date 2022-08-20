@@ -23,22 +23,31 @@ export class GigsViewComponent implements OnInit {
   constructor(private gigsService: GigsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.displayGigs();
+  }
+
+  openDialog(id: any){
+    const dialogRef = this.dialog.open(DeleteAlertComponent, {
+      height: '250px',
+      panelClass: 'delete_alert_box',
+      data: {
+        id: id
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result)
+        this.displayGigs();
+    });
+  }
+
+  displayGigs(){
     this.gigsService.getGigs().subscribe((res: any) => {
       this.dataSource = new MatTableDataSource(res.data)
       this.dataSource.paginator = this.paginator
       this.dataSource.sort = this.matSort
     }, error =>{
       console.log(error)
-    })
-  }
-
-  openDialog(id: any){
-    this.dialog.open(DeleteAlertComponent, {
-      height: '250px',
-      panelClass: 'delete_alert_box',
-      data: {
-        id: id
-      }
     })
   }
 

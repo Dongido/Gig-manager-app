@@ -12,6 +12,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthGuard} from './auth.guard';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthGuard} from './auth.guard';
     MatSidenavModule,
     HttpClientModule,
     FormsModule,
+    MatSnackBarModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

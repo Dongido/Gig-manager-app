@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
     if(siginInForm.valid){
       this.authServices.login(siginInForm.value)
     }
-    else {
-      this.invalidUser = this.authServices.invalidUser
-    }
   }
+  
 }

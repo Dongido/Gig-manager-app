@@ -2,7 +2,7 @@ export interface UserRegister {
     email: string;
     name: string;
     password: string;
-    c_password: string;
+    password_confirmation: string;
 }
 
 export interface UserLogin {

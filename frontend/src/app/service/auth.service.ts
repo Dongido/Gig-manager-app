@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { UserLogin, UserRegister } from '../model/signInData';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { BehaviorSubject } from 'rxjs';
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ import { environment } from '../../environments/environment'
 
 export class AuthService {
   token: boolean = !!localStorage.getItem('token')
-  public invalidUser: string = ''
+  public invalidUser: any
   private loggedIn = new BehaviorSubject<boolean>(this.token)
   
   baseUrl: string = environment.baseUrl 
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private snackBar: MatSnackBar) { }
 
   getToken() {
     let token = localStorage.getItem('token');
@@ -42,8 +43,9 @@ export class AuthService {
         this.loggedIn.next(true)
         this.router.navigate(["gig/view"])
       }, error => {
-        console.log(error);
         this.invalidUser = JSON.stringify(error.error.data.error);
+        const message = this.invalidUser.replaceAll('"', '')
+        this.openSnackBar(message, 'Close')
       }
     );   
   }
@@ -56,6 +58,12 @@ export class AuthService {
 
   get isloggedIn(){
     return this.loggedIn.asObservable()
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }

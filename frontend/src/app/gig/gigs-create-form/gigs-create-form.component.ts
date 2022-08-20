@@ -5,6 +5,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { GigsService } from '../../service/gigs.service';
 import { Router } from '@angular/router';
 import {GigsData} from '../../model/gigs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface Tags {
   name: string;
@@ -55,7 +56,11 @@ export class GigsCreateFormComponent implements OnInit {
     maximum_salary: new FormControl('')
   })
 
-  constructor(public fb: FormBuilder, private gigService: GigsService, private router: Router) { 
+  constructor(
+    public fb: FormBuilder, 
+    private gigService: GigsService, 
+    private router: Router,
+    private  snackBar: MatSnackBar ) { 
   }
 
   ngOnInit(): void {
@@ -64,6 +69,7 @@ export class GigsCreateFormComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   tags: Tags[] = [];
+  message: string = ''
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -97,17 +103,25 @@ export class GigsCreateFormComponent implements OnInit {
     if(this.steps == 2){
       if(this.gigFG.valid){
         let formdata = this.gigFG.value
-        //console.log("DATA: ", formdata)
-        //console.log("Data Type ", typeof(formdata));
         
         this.gigService.addNewGig(formdata).subscribe(() =>{
-          console.log('Gig added successfully')
+          this.message = 'Gig added successfully'
+          console.log(this.message)
+          this.openSnackBar(this.message, 'Close')
           this.router.navigate(['/gig/view'])
         }, error =>{
           console.log(error)
+          this.message = error.error.message
+          this.openSnackBar(this.message, 'Close')
         })
       }
     }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }

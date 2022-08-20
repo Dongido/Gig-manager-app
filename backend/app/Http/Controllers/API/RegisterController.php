@@ -13,16 +13,11 @@ class RegisterController extends BaseController
 {
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-            'c_password' => 'required|same:password',
+            'password' => 'required|confirmed|min:8',
         ]);
-   
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());       
-        }
    
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);

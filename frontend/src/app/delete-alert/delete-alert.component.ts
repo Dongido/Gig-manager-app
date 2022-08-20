@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Optional } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { GigsService } from '../service/gigs.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-delete-alert',
@@ -11,16 +12,19 @@ import { Router } from '@angular/router';
 export class DeleteAlertComponent implements OnInit {
 
   id: number = 0;
+  message : string = '';
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     @Optional() public dialogRef: MatDialogRef<DeleteAlertComponent>,
-    private gigsService: GigsService, private router: Router
+    private gigsService: GigsService, private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.id = data.id;
    }
 
   ngOnInit(): void {
-    console.log('From delete alert: ', this.id)
+    
   }
 
   no() {
@@ -29,13 +33,20 @@ export class DeleteAlertComponent implements OnInit {
 
   yes() {
     this.gigsService.removeGig(this.id).subscribe(res => {
-      console.log(this.id, " Gig has been deleted")
+      this.message = 'Gig was deleted successfully'
+      this.openSnackBar(this.message, 'Close')
+      this.dialogRef.close(true);
     }, error =>{
       console.log(error)
-    })
+      this.message = error.error.message
+      this.openSnackBar(this.message, 'Close')
+    })    
+  }
 
-    this.dialogRef.close(true);
-    this.router.navigate(['/gig/view'])
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
 }
