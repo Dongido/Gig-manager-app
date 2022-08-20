@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserLogin, UserRegister } from '../model/signInData';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class AuthService {
   token: boolean = !!localStorage.getItem('token')
   public invalidUser: string = ''
   private loggedIn = new BehaviorSubject<boolean>(this.token)
-  baseUrl: string = "https://testapi.orientexpress.com.ng"
-  //baseUrl: string = "http://127.0.0.1:8000" 
+  
+  baseUrl: string = environment.baseUrl 
 
   constructor(private router: Router, private http: HttpClient) { }
 

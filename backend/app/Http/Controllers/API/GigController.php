@@ -31,9 +31,7 @@ class GigController extends BaseController
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-   
-        $validator = Validator::make($input, [
+        $validator = $request->validate([
             'company_id' => 'required',
             'role_id' => 'required',
             'country' => 'required',
@@ -43,14 +41,8 @@ class GigController extends BaseController
             'minimum_salary' => 'required',
             'maximum_salary' => 'required'
         ]);
-   
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());       
-        }
-   
-        $gig = Gig::create($input);
-   
-        return $this->sendResponse(new GigResource($gig), 'Gig created successfully.');
+
+        Gig::create($validator);
     } 
 
     /**
