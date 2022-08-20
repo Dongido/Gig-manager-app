@@ -73,7 +73,7 @@ class GigController extends BaseController
     {
         $input = $request->all();
    
-        $validator = Validator::make($input, [
+        $validator = $request->validate([
             'company_id' => 'required',
             'role_id' => 'required',
             'country' => 'required',
@@ -83,10 +83,6 @@ class GigController extends BaseController
             'minimum_salary' => 'required',
             'maximum_salary' => 'required'
         ]);
-   
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());       
-        }
    
         $gig->company_id = $input['company_id'];
         $gig->role_id = $input['role_id'];
